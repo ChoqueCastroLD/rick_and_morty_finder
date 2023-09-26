@@ -14,7 +14,7 @@ How to setup:
 ```bash
 cd backend
 npm install
-npm build
+npm run build
 npm start
 ```
 
@@ -27,7 +27,24 @@ How to setup:
 ```bash
 cd frontend
 npm install
+npm run build
 npm start
 ```
 
 By default, the server will run on port 3000.
+
+# Extra
+
+If you want to run the app in development mode, you can run the following commands:
+
+```bash
+cd backend
+npm run dev
+```
+
+```bash
+cd frontend
+npm run dev
+```
+
+This will automatically reload when changes are made.

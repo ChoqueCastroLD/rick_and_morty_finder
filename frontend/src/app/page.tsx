@@ -64,7 +64,7 @@ const Home = () => {
   }, [currentPage, searchValue, showInfiltrates]);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <p>Error: {(error as any).message}</p>;
 
   return (
     <main>
@@ -118,7 +118,6 @@ const Home = () => {
                   onChange={(event, page) => setCurrentPage(page)}
                   renderItem={(item) => (
                     <PaginationItem
-                      onClick={() => setCurrentPage(item.page)}
                       {...item}
                     />
                   )}
