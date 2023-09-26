@@ -1,10 +1,13 @@
 import express, { Express, Request, Response } from 'express';
+import cors from "cors";
 import { getCharacters } from "./services/rickAndMortyAPI";
 
 
 export function startServer() {
-  const PORT = process.env.PORT;
+  const PORT = process.env.PORT || 4000;
   const app: Express = express();
+
+  app.use(cors());
 
   app.get('/api/characters', async (req: Request, res: Response) => {
     const page = parseInt(req.query.page as string) || 1;
