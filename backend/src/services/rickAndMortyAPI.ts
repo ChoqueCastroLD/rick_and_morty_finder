@@ -31,7 +31,7 @@ function createQuery(page: number, humans: boolean, search?: string) {
 }
 
 function fetchCharactersAPI(query: string) {
-  const RICKANDMORTY_API_URL = "" + process.env.RICKANDMORTY_API_URL;
+  const RICKANDMORTY_API_URL = "" + (process.env.RICKANDMORTY_API_URL || "https://rickandmortyapi.com/graphql");
   return fetch(RICKANDMORTY_API_URL, {
     method: 'POST',
     headers: {
